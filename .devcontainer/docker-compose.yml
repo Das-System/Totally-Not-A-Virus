@@ -23,14 +23,17 @@ services:
     restart: unless-stopped
     volumes:
       - mariadb-data:/var/lib/mysql
+    env_file:
+      - path: ./.env 
+        required: true # default
     environment:
-      MYSQL_ROOT_PASSWORD: mariadb
+      MYSQL_ROOT_PASSWORD: "${{ root_pw }}"
       MYSQL_DATABASE: mariadb
-      MYSQL_USER: mariadb
-      MYSQL_PASSWORD: mariadb
+      MYSQL_USER: "${{ sql_user }}"
+      MYSQL_PASSWORD: "${{ sql_pw }}"
 
     # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
-  
+
 volumes:
   mariadb-data:
