@@ -3,7 +3,9 @@ FROM mcr.microsoft.com/devcontainers/php:4-8.5-trixie
 # Install MariaDB client
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y mariadb-client \ 
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/*\
+    && echo "Installed MariaDB client version: $(mysql --version)" \
+    && echo "Installed PHP version: $(php -v)" \
 
 # Install php-mysql driver
 RUN docker-php-ext-install mysqli pdo pdo_mysql
