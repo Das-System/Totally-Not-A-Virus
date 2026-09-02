@@ -20,11 +20,9 @@ services:
     restart: unless-stopped
     volumes:
       - mariadb-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: ${root_pw}
-      MYSQL_DATABASE: mariadb
-      MYSQL_USER: ${sql_user}
-      MYSQL_PASSWORD: ${sql_pw}
+    env_file: 
+      - ../.env
+      
     networks:
       - backend
     # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
