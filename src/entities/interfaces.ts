@@ -1,17 +1,18 @@
-interface Attributes {
-    name: string;
+export type AttributeName = "strength" | "dexterity" | "intelligence" | "wisdom" | "luck";
+
+export interface Attributes {
     description: string;
     value: number;
 }
 
-interface Items {
+export interface Items {
     name: string;
     description: string;
     attribute: Attributes[];
     skill: Skills[];
 }
 
-interface Skills {
+export interface Skills {
     name: string;
     description: string;
     damageMulti: number;
@@ -19,13 +20,9 @@ interface Skills {
     critChance: number;
     critDamage: number;
 }
-    // private strength: number;
-    // private dexterity: number;
-    // private intelligence: number;
-    // private wisedome: number;
-    // private luck: number;
 
-interface Buffs {
+
+export interface Buffs {
     name: string;
     description: string;
     duration: number;
@@ -33,7 +30,7 @@ interface Buffs {
     singleUse: boolean;
 }
 
-interface EquipmentSlots {
+export interface Slots {
     name: string;
     description: string;
     item: Items;
