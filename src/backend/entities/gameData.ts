@@ -1,4 +1,4 @@
-import { Attributes, AttributeName } from "./intefaces";
+import { Attributes, AttributeName } from "./interfaces";
 
 export const ATTRIBUTES: Record<AttributeName, Attributes> = {
     strength: { description: "Your Physical Prowess", value: 0 },
