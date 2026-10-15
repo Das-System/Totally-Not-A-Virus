@@ -1,4 +1,6 @@
-import { Attributes, Items, Slots, Skills, Buffs } from "./interfaces.ts"
+import { Attributes } from "./Attributes.ts";
+import { ATTRIBUTES } from "./gameData.ts";
+import { AttributesData, Items, Slots, Skills, Buffs, AttributeName } from "./interfaces.ts"
 
 abstract class Character {
     private name: string;
@@ -9,7 +11,7 @@ abstract class Character {
     private sp: number;
     private maxSp: number;
     private initiative: number;
-    private attributes: Attributes[];
+    private attributes: Record<AttributeName, AttributesData>;
     private level: number;
     private inventory: Items[];
     private equipmentSlots: Slots[];
@@ -41,7 +43,7 @@ abstract class Character {
     public getInitiative(): number {
         return this.initiative
     }
-    public getAttributes(): Attributes[] {
+    public getAttributes(): Record<AttributeName, AttributesData> {
         return this.attributes;
     }
     public getLevel(): number{
@@ -86,9 +88,9 @@ abstract class Character {
     public setInitiative(initiative: number): void {
         this.initiative = initiative
     }
-    public setAttributes(attributes: Attributes[]): void {
-        this.attributes = attributes;
-    }
+    // public setAttributes(attributes: Attributes[]): void {
+    //     this.attributes = attributes;
+    // }
     public setLevel(level: number): void {
         this.level = level;
     }
@@ -107,7 +109,10 @@ abstract class Character {
         this.sp = 1;
         this.maxSp = 1;
         this.initiative = 1;
-        this.attributes = [];
+        this.attributes = {
+            strength: new Attributes(ATTRIBUTES.strength.description, ATTRIBUTES.strength.value),
+            intelligence: new Att
+        };
         this.level = 1;
         this.inventory = [];
         this.equipmentSlots = [];

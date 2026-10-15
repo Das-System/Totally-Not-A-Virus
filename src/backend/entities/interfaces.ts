@@ -1,6 +1,6 @@
 export type AttributeName = "strength" | "dexterity" | "intelligence" | "wisdom" | "luck";
 
-export interface Attributes {
+export interface AttributesData {
     description: string;
     value: number;
 }
@@ -8,7 +8,7 @@ export interface Attributes {
 export interface Items {
     name: string;
     description: string;
-    attribute: Attributes[];
+    attribute: AttributesData[];
     skill: Skills[];
 }
 
@@ -16,7 +16,7 @@ export interface Skills {
     name: string;
     description: string;
     damageMulti: number;
-    damageAttribute: Attributes;
+    damageAttribute: AttributesData;
     critChance: number;
     critDamage: number;
 }
