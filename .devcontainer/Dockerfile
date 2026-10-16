@@ -22,3 +22,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_24.x| bash - \
 # Set Apache document root permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
+
+# Install NPM packages
+RUN npm install 
