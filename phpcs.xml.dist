@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="Project">
+    <description>Use PSR-12 for PHP source files.</description>
+    <arg name="extensions" value="php"/>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/dist/*</exclude-pattern>
+    <rule ref="PSR12"/>
+</ruleset>
