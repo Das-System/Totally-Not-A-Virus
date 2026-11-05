@@ -20,6 +20,15 @@ RUN apt-get update && apt-get install -y curl \
     && node --version \
     && npm --version
 
+# Set working directory
+WORKDIR /workspaces
+
+# Copy npm dependency definitions
+COPY package.json ./
+
+# Install npm dependencies
+RUN npm install
+
 # Set Apache document root permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
