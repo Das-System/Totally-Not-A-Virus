@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y curl \
 WORKDIR /workspaces
 
 # Copy npm dependency definitions
-COPY package.json ./
+COPY package.json package-lock.json ./
 
 # Install npm dependencies
 RUN npm install
