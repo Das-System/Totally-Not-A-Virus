@@ -1,17 +1,17 @@
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
-export class de(){
+export class de {
     @PrimaryColumn("int")
-    id = int
+    id!: number
     @Column("text")
-    content = string
+    content!: string
 }
 
 @Entity()
-export class en(){
+export class en {
     @PrimaryColumn("int")
-    id = int
+    id!: number
     @Column("text")
-    content = string
+    content!: string
 }
