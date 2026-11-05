@@ -1,31 +1,27 @@
-services: 
+services:
   apache:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
 
     volumes:
       - ../../:/workspaces:cached
       - ../php_root:/var/www/html
 
-    working_dir: /workspaces/Totally-Not-A-Virus
+    working_dir: /workspaces/
 
     ports:
       - "8080:80"
     networks:
       - backend
-    command: 
-      - bash
-      - -c
-      - npm install && exec apache2-foreground
   db:
     image: mariadb:10.4
     restart: unless-stopped
     volumes:
       - mariadb-data:/var/lib/mysql
-    env_file: 
+    env_file:
       - ../.env
-      
+
     networks:
       - backend
 
