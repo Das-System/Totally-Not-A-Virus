@@ -11,7 +11,8 @@ services:
       - "8080:80"
     networks:
       - backend
-
+    command: 
+      - bash -c "npm install && npm start"
   db:
     image: mariadb:10.4
     restart: unless-stopped
