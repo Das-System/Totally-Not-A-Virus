@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
-export class de {
+export class De {
     @PrimaryColumn("int")
     id!: number
     @Column("text")
@@ -9,7 +9,7 @@ export class de {
 }
 
 @Entity()
-export class en {
+export class En {
     @PrimaryColumn("int")
     id!: number
     @Column("text")
