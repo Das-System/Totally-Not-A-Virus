@@ -1,3 +1,4 @@
+.env
 .schoolstuff/*
 notes.md
 node_modules/
