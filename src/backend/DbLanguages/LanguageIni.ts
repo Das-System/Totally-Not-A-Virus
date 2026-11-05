@@ -2,9 +2,9 @@ import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class de(){
-    @PrimaryColumn()
+    @PrimaryColumn("int")
     id = int
-    @Column
+    @Column("text")
     content = string
 }
 
