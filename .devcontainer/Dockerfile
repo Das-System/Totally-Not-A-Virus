@@ -14,10 +14,11 @@ RUN apt-get update \
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Install Node.js v24
-RUN curl -fsSL https://deb.nodesource.com/setup_24.x| bash - \
+RUN apt-get update && apt-get install -y curl \
+    && curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
     && apt-get install -y nodejs \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && node --version \
+    && npm --version
 
 # Set Apache document root permissions
 RUN chown -R www-data:www-data /var/www/html \
