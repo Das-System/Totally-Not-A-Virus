@@ -5,8 +5,9 @@ services:
       dockerfile: .devcontainer/Dockerfile
 
     volumes:
-      - ../../:/workspaces:cached
-      - ../php_root:/var/www/html
+    - ../../:/workspaces:cached
+    - /workspaces/node_modules
+    - ../php_root:/var/www/html
 
     working_dir: /workspaces/
 
