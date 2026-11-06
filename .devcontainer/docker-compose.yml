@@ -19,7 +19,7 @@ services:
     image: mariadb:10.4
     restart: unless-stopped
     volumes:
-      - mariadb-data:/var/lib/mysql
+      - /src/backend/totally_Not_a.db:/var/lib/mysql
     env_file:
       - ../.env
 
