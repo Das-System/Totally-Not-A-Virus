@@ -8,6 +8,5 @@
     ],
     "features": {
         "ghcr.io/devcontainers-extra/features/vue-cli:2": {}
-    },
-    "postCreateCommand": "npm install"
+    }
 }
