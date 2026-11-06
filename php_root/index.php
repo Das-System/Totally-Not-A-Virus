@@ -11,14 +11,11 @@
     <div id="app">{{ message }}</div>
 
     <script type="module">
-        import { createApp, ref } from 'http://localhost:8080/node_modules/vue/dist/vue.esm-browser.js'
-
+        import { createApp, ref } from './node_modules/vue/dist/vue.esm-browser.js'
         createApp({
             setup() {
-                const message = ref('Hello Vue!')
-                return {
-                    message
-                }
+                const message = ref("Hello Vue")
+                return { message }
             }
         }).mount('#app')
     </script>
