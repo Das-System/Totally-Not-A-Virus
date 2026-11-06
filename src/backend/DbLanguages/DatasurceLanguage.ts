@@ -1,11 +1,11 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { De, En } from "./LanguageIni.ts"
+import { De, En } from "./LanguageEntitys.ts"
 
 export const LANGUAGEDB = new DataSource({
     type: "mariadb",
     host: "localhost",
-    port: 5432,
+    port: 6033,
     username: "Lang",
     password: "Language",
     database: "Lang",
