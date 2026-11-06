@@ -20,14 +20,15 @@ RUN apt-get update && apt-get install -y curl \
     && node --version \
     && npm --version
 
+# Copy apache  
+COPY .devcontainer/apache/vue.conf /etc/apache2/conf-available/
+RUN a2enconf vue
+
 # Set working directory
 WORKDIR /workspaces
 
 # Copy npm dependency definitions
 COPY package.json package-lock.json ./
-
-# Copy apache  
-COPY .devcontainer/apache/vue.conf etc/apache2/conf-available/
 
 # Install npm dependencies
 RUN npm install
