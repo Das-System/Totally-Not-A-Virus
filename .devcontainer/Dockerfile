@@ -26,6 +26,9 @@ WORKDIR /workspaces
 # Copy npm dependency definitions
 COPY package.json package-lock.json ./
 
+# Copy apache  
+COPY .devcontainer/apache/vue.conf etc/apache2/conf-available/
+
 # Install npm dependencies
 RUN npm install
 
