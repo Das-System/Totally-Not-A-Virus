@@ -1,15 +1,13 @@
 import { LANGUAGEDB } from "./DatasurceLanguage.ts";
 
-async function StartDb(): Promise<string> {
+export async function StartDb(): Promise<boolean> {
     try {
         await LANGUAGEDB.initialize();
+        console.log("Database is running");
     } catch (error) {
         console.log(error);
-
     }
-    console.log("Database is running");
-
-    return "done"
+    return true
 }
 
 StartDb();
